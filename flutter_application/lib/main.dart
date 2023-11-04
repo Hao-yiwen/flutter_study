@@ -1,146 +1,78 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
 
 void main() {
+  // debugPaintSizeEnabled = false; // Set to true for visual layout
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
+
+  static const showGrid = false; // Set to false to show ListView
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        title: "flutter layout demo",
-        home: Scaffold(
-          body: Row(
-            children: [
-              SizedBox(width: 400, child: LeftColumn()),
-              RightColumn()
-            ],
-          ),
-        ));
-  }
-}
-
-class LeftColumn extends StatelessWidget {
-  const LeftColumn({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(children: [
-      Container(
-          margin: const EdgeInsets.all(20),
-          child: const Text("Stawberry Pavlova",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20))),
-      const Text(
-        "Pavlova is a meringue-based dessert named after the Russian ballerina Anna Pavlova. Pavlova features a crisp crust and soft, light inside, topped with fruit and whipped cream.",
-        textAlign: TextAlign.center,
-      ),
-      const SubTitle(),
-      Container(
-        margin: const EdgeInsets.only(top: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                Icon(Icons.kitchen, color: Colors.green[500]),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: const Text("PREP:"),
-                ),
-                const Text("25 min", style: TextStyle(fontWeight: FontWeight.bold))
-              ],
-            ),
-            const SizedBox(
-              width: 40,
-            ),
-            Column(
-              children: [
-                Icon(Icons.timer, color: Colors.green[500]),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: const Text("COOK:"),
-                ),
-                const Text("1 hr", style: TextStyle(fontWeight: FontWeight.bold))
-              ],
-            ),
-            const SizedBox(
-              width: 40,
-            ),
-            Column(
-              children: [
-                Icon(Icons.restaurant, color: Colors.green[500]),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(0, 20, 0, 20),
-                  child: const Text("FEEDS:"),
-                ),
-                const Text("4-6", style: TextStyle(fontWeight: FontWeight.bold))
-              ],
-            )
-          ],
+    return MaterialApp(
+      title: 'Flutter layout demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Flutter layout demo'),
         ),
-      )
-    ]);
-  }
-}
-
-class SubTitle extends StatelessWidget {
-  const SubTitle({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const Icon(
-            Icons.star,
-            color: Colors.black,
-            size: 20,
-          ),
-          const Icon(
-            Icons.star,
-            color: Colors.black,
-            size: 20,
-          ),
-          const Icon(
-            Icons.star,
-            color: Colors.black,
-            size: 20,
-          ),
-          const Icon(
-            Icons.star,
-            color: Colors.black,
-            size: 20,
-          ),
-          const Icon(
-            Icons.star,
-            color: Colors.black,
-            size: 20,
-          ),
-          Container(
-            alignment: Alignment.center,
-            margin: const EdgeInsets.only(left: 10),
-            child: const Text(
-              "170 Reviews",
-              style: TextStyle(color: Colors.black, fontSize: 15),
-            ),
-          ),
-        ],
+        body: Center(child: showGrid ? _buildGrid() : _buildList()),
       ),
     );
   }
-}
 
-class RightColumn extends StatelessWidget {
-  const RightColumn({Key? key}) : super(key: key);
+  // #docregion grid
+  Widget _buildGrid() => GridView.extent(
+      maxCrossAxisExtent: 150,
+      padding: const EdgeInsets.all(4),
+      mainAxisSpacing: 4,
+      crossAxisSpacing: 4,
+      children: _buildGridTileList(5));
 
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-        child: Image.asset("assets/pavlova.jpg", fit: BoxFit.cover));
+  // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
+  // The List.generate() constructor allows an easy way to create
+  // a list when objects have a predictable naming pattern.
+  List<Container> _buildGridTileList(int count) => List.generate(
+      count, (i) => Container(child: Image.asset('assets/pic$i.png')));
+  // #enddocregion grid
+
+  // #docregion list
+  Widget _buildList() {
+    return ListView(
+      children: [
+        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
+        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
+        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
+        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
+        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
+            Icons.theaters),
+        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
+        const Divider(),
+        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
+        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
+        _tile(
+            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+        _tile('La Ciccia', '291 30th St', Icons.restaurant),
+      ],
+    );
   }
+
+  ListTile _tile(String title, String subtitle, IconData icon) {
+    return ListTile(
+      title: Text(title,
+          style: const TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 20,
+          )),
+      subtitle: Text(subtitle),
+      leading: Icon(
+        icon,
+        color: Colors.blue[500],
+      ),
+    );
+  }
+  // #enddocregion list
 }
