@@ -1,33 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(MyApp());
+  debugPaintSizeEnabled = true;
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-     String test() {
-      final platform = Theme.of(context).platform;
-      if (platform == TargetPlatform.iOS) {
-        return 'iOS';
-      }
-      if (platform == TargetPlatform.android) {
-        return 'android';
-      }
-      if (platform == TargetPlatform.fuchsia) {
-        return 'fuchsia';
-      }
-      return 'not recognized ';
-    }
-
-    return MaterialApp(
-      title: 'Navigation Demo',
-      home: Scaffold(
-          appBar: AppBar(title: const Text('Navigation Demo')),
-          body: Center(child: Text(test()))),
-    );
+    return const Center(
+        child: Text(
+      'Hello, world!',
+      textDirection: TextDirection.ltr,
+    ));
   }
 }
