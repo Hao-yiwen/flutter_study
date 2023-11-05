@@ -12,6 +12,10 @@ class MyApp extends StatelessWidget {
             body: Center(
                 child: Container(
                     child: const Text('阿里巴巴',
-                        style: TextStyle(fontSize: 40.0, fontFamily: 'Ali', fontWeight: FontWeight.w700, fontStyle: FontStyle.italic))))));
+                        style: TextStyle(
+                            fontSize: 40.0,
+                            fontFamily: 'Ali',
+                            fontWeight: FontWeight.w700,
+                            fontStyle: FontStyle.italic))))));
   }
 }
