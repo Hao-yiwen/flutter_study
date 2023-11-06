@@ -1,78 +1,81 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:sqflite/sqflite.dart';
+import 'package:path/path.dart';
+import 'dart:async';
 
-void main() {
-  // debugPaintSizeEnabled = false; // Set to true for visual layout
-  runApp(const MyApp());
-}
+void main() async => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  static const showGrid = false; // Set to false to show ListView
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter layout demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Flutter layout demo'),
-        ),
-        body: Center(child: showGrid ? _buildGrid() : _buildList()),
+      title: 'Flutter SQLite Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  late Database database;
+
+  @override
+  void initState() {
+    super.initState();
+    initializeDatabase();
+  }
+
+  Future<void> initializeDatabase() async {
+    print(12312);
+    // 获取数据库路径
+    String databasePath = await getDatabasesPath();
+    String path = join(databasePath, 'my_database.db');
+
+    // 打开/创建数据库
+    database = await openDatabase(path, version: 1, onCreate: (Database db, int version) async {
+      // 创建表
+      await db.execute('CREATE TABLE Test (id INTEGER PRIMARY KEY, name TEXT)');
+    });
+
+    // 插入数据
+    await insertTestData();
+    
+    // 查询数据
+    List<Map> list = await database.rawQuery('SELECT * FROM Test');
+    print(list);
+  }
+
+  Future<void> insertTestData() async {
+    await database.transaction((txn) async {
+      int id1 = await txn.rawInsert(
+        'INSERT INTO Test(name) VALUES("some name")'
+      );
+      print('inserted1: $id1');
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter SQLite Demo'),
+      ),
+      body: Center(
+        child: Text('Check console for SQL operations results.'),
       ),
     );
   }
 
-  // #docregion grid
-  Widget _buildGrid() => GridView.extent(
-      maxCrossAxisExtent: 150,
-      padding: const EdgeInsets.all(4),
-      mainAxisSpacing: 4,
-      crossAxisSpacing: 4,
-      children: _buildGridTileList(5));
-
-  // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
-  // The List.generate() constructor allows an easy way to create
-  // a list when objects have a predictable naming pattern.
-  List<Container> _buildGridTileList(int count) => List.generate(
-      count, (i) => Container(child: Image.asset('assets/pic$i.png')));
-  // #enddocregion grid
-
-  // #docregion list
-  Widget _buildList() {
-    return ListView(
-      children: [
-        _tile('CineArts at the Empire', '85 W Portal Ave', Icons.theaters),
-        _tile('The Castro Theater', '429 Castro St', Icons.theaters),
-        _tile('Alamo Drafthouse Cinema', '2550 Mission St', Icons.theaters),
-        _tile('Roxie Theater', '3117 16th St', Icons.theaters),
-        _tile('United Artists Stonestown Twin', '501 Buckingham Way',
-            Icons.theaters),
-        _tile('AMC Metreon 16', '135 4th St #3000', Icons.theaters),
-        const Divider(),
-        _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
-        _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
-        _tile(
-            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
-        _tile('La Ciccia', '291 30th St', Icons.restaurant),
-      ],
-    );
+  @override
+  void dispose() {
+    database.close();
+    super.dispose();
   }
-
-  ListTile _tile(String title, String subtitle, IconData icon) {
-    return ListTile(
-      title: Text(title,
-          style: const TextStyle(
-            fontWeight: FontWeight.w500,
-            fontSize: 20,
-          )),
-      subtitle: Text(subtitle),
-      leading: Icon(
-        icon,
-        color: Colors.blue[500],
-      ),
-    );
-  }
-  // #enddocregion list
 }

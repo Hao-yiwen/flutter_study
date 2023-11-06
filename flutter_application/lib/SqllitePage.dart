@@ -1,26 +1,31 @@
 import 'package:flutter/material.dart';
-import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'dart:async';
+import 'package:sqflite/sqflite.dart';
 
-void main() async => runApp(MyApp());
+void main() {
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
+    // TODO: implement build
     return MaterialApp(
-      title: 'Flutter SQLite Demo',
+      title: 'Flutter Sqllite Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
+      home: MyHomePage()
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -28,25 +33,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     initializeDatabase();
   }
 
   Future<void> initializeDatabase() async {
-    print(12312);
-    // 获取数据库路径
     String databasePath = await getDatabasesPath();
-    String path = join(databasePath, 'my_database.db');
+    String path = join(databasePath + 'my.db');
 
-    // 打开/创建数据库
-    database = await openDatabase(path, version: 1, onCreate: (Database db, int version) async {
-      // 创建表
-      await db.execute('CREATE TABLE Test (id INTEGER PRIMARY KEY, name TEXT)');
+    database = await openDatabase(path, version: 1, onCreate: (db, version) async => {
+      await db.execute('CREATE TABLE Test (id INTEGER PRIMARY KEY, name TEXT)')
     });
 
     // 插入数据
     await insertTestData();
-    
+
     // 查询数据
     List<Map> list = await database.rawQuery('SELECT * FROM Test');
     print(list);
@@ -54,10 +56,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> insertTestData() async {
     await database.transaction((txn) async {
-      int id1 = await txn.rawInsert(
-        'INSERT INTO Test(name) VALUES("lalala")'
-      );
-      print('inserted1: $id1');
+      int id1 = await txn.rawInsert('INSERT INTO Test(name) VALUES("item1")');
+      print("inserting: $id1");
     });
   }
 
@@ -65,10 +65,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter SQLite Demo'),
+        title: Text('Sqllite Demo'),
       ),
       body: Center(
-        child: Text('Check console for SQL operations results.'),
+        child: Text('Sqllite Demo'),
       ),
     );
   }
