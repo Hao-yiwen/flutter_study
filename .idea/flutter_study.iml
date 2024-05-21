@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/camera_avfoundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/camera_avfoundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/camera_avfoundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/camera_avfoundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/camera_avfoundation/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/camera_avfoundation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/google_sign_in_ios/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/google_sign_in_ios/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/google_sign_in_ios/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/google_sign_in_ios/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/google_sign_in_ios/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/google_sign_in_ios/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/shared_preferences_foundation/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/shared_preferences_foundation/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/shared_preferences_foundation/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/shared_preferences_foundation/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/shared_preferences_foundation/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/shared_preferences_foundation/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/sqflite/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/sqflite/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/sqflite/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/sqflite/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/sqflite/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/ios/.symlinks/plugins/sqflite/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/path_provider_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_application/windows/flutter/ephemeral/.plugin_symlinks/shared_preferences_windows/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_demo/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_demo/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_demo/build" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_template/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_template/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/flutter_template/build" />
+      <excludeFolder url="file://$MODULE_DIR$/matching_game/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/matching_game/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/matching_game/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Dart SDK" level="project" />
+    <orderEntry type="library" name="Dart Packages" level="project" />
+  </component>
+</module>
