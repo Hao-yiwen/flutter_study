@@ -13,13 +13,17 @@ import 'package:flutter_application/pages/LayoutPage.dart';
 import 'package:flutter_application/pages/LifecyclePage.dart';
 import 'package:flutter_application/pages/LocalizationPage.dart';
 import 'package:flutter_application/pages/MyPluginPage.dart';
+import 'package:flutter_application/pages/NavigationPage.dart';
 import 'package:flutter_application/pages/PlatformPage.dart';
+import 'package:flutter_application/pages/RandomWords.dart';
 import 'package:flutter_application/pages/SharedPreferencesPage.dart';
 import 'package:flutter_application/pages/ShoppingList.dart';
 import 'package:flutter_application/pages/SqlitePage.dart';
+import 'package:flutter_application/pages/SqlitePage2.dart';
 import 'package:flutter_application/pages/TabBarPage.dart';
 import 'package:flutter_application/pages/ThemePage.dart';
 import 'package:flutter_application/pages/TimerTestPage.dart';
+import 'package:flutter_application/pages/guess/GuessGamePage.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
 import 'package:path/path.dart';
@@ -114,5 +118,22 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
         GoRoute(
             path: 'MyPluginPage',
             builder: (context, state) => const MyPluginPage()),
+        GoRoute(
+            path: 'SqlitePage2', builder: (context, state) => SqlitePage2()),
+        GoRoute(
+            path: 'NavigationPage',
+            builder: (context, state) => const NavigationPage()),
+        GoRoute(
+            path: 'GuessGamePage',
+            builder: (context, state) {
+              return const GuessGamePage(
+                titles: 'GuessGamePage',
+              );
+            }),
+        GoRoute(
+            path: 'RandomWords',
+            builder: (context, state) {
+              return const RandomWords();
+            }),
       ]),
 ]);
