@@ -94,6 +94,22 @@ class HomePage extends StatelessWidget {
               TextButton(
                   onPressed: () => {GoRouter.of(context).go('/MyPluginPage')},
                   child: const Text('MyPluginPage')),
+              TextButton(
+                child: const Text('SqlitePage2'),
+                onPressed: () => {GoRouter.of(context).go('/SqlitePage2')},
+              ),
+              TextButton(
+                child: const Text('NavigationPage'),
+                onPressed: () => {GoRouter.of(context).go('/NavigationPage')},
+              ),
+              TextButton(
+                child: const Text('GuessGamePage'),
+                onPressed: () => {GoRouter.of(context).go('/GuessGamePage')},
+              ),
+              TextButton(
+                child: const Text('RandomWords'),
+                onPressed: () => {GoRouter.of(context).go('/RandomWords')},
+              ),
             ]),
           ),
         ),
