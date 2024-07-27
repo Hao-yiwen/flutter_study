@@ -12,6 +12,7 @@ import 'package:flutter_application/pages/IconPage.dart';
 import 'package:flutter_application/pages/LayoutPage.dart';
 import 'package:flutter_application/pages/LifecyclePage.dart';
 import 'package:flutter_application/pages/LocalizationPage.dart';
+import 'package:flutter_application/pages/LottiePage.dart';
 import 'package:flutter_application/pages/MyPluginPage.dart';
 import 'package:flutter_application/pages/NavigationPage.dart';
 import 'package:flutter_application/pages/PlatformPage.dart';
@@ -135,5 +136,11 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             builder: (context, state) {
               return const RandomWords();
             }),
+        GoRoute(
+          path: 'Lottiepage',
+          builder: (context, state) {
+            return const Lottiepage();
+          },
+        )
       ]),
 ]);
