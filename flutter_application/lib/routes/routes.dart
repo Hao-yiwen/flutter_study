@@ -6,12 +6,14 @@ import 'package:flutter_application/pages/DrawerPage.dart';
 import 'package:flutter_application/pages/FontFamilyPage.dart';
 import 'package:flutter_application/pages/FormPage.dart';
 import 'package:flutter_application/pages/GesturePage.dart';
+import 'package:flutter_application/pages/Get/GetXPage.dart';
 import 'package:flutter_application/pages/GridPage.dart';
 import 'package:flutter_application/pages/HttpPage.dart';
 import 'package:flutter_application/pages/IconPage.dart';
 import 'package:flutter_application/pages/LayoutPage.dart';
 import 'package:flutter_application/pages/LifecyclePage.dart';
 import 'package:flutter_application/pages/LocalizationPage.dart';
+import 'package:flutter_application/pages/LottiePage.dart';
 import 'package:flutter_application/pages/MyPluginPage.dart';
 import 'package:flutter_application/pages/NavigationPage.dart';
 import 'package:flutter_application/pages/PlatformPage.dart';
@@ -135,5 +137,17 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             builder: (context, state) {
               return const RandomWords();
             }),
+        GoRoute(
+          path: 'Lottiepage',
+          builder: (context, state) {
+            return const Lottiepage();
+          },
+        ),
+        GoRoute(
+          path: 'GetXpage',
+          builder: (context, state) {
+            return const GetXpage();
+          },
+        )
       ]),
 ]);
