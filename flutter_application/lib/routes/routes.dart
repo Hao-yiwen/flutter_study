@@ -6,6 +6,7 @@ import 'package:flutter_application/pages/DrawerPage.dart';
 import 'package:flutter_application/pages/FontFamilyPage.dart';
 import 'package:flutter_application/pages/FormPage.dart';
 import 'package:flutter_application/pages/GesturePage.dart';
+import 'package:flutter_application/pages/Get/GetXPage.dart';
 import 'package:flutter_application/pages/GridPage.dart';
 import 'package:flutter_application/pages/HttpPage.dart';
 import 'package:flutter_application/pages/IconPage.dart';
@@ -140,6 +141,12 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
           path: 'Lottiepage',
           builder: (context, state) {
             return const Lottiepage();
+          },
+        ),
+        GoRoute(
+          path: 'GetXpage',
+          builder: (context, state) {
+            return const GetXpage();
           },
         )
       ]),

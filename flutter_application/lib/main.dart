@@ -1,14 +1,17 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application/routes/AuthBinding.dart';
 import 'package:flutter_application/routes/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get/get.dart';
 
 late List<CameraDescription> cameras;
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
-  runApp(MaterialApp.router(
+  AuthBinding().dependencies();
+  runApp(GetMaterialApp.router(
     theme: ThemeData(
       // Define the default brightness and colors.
       // brightness: Brightness.dark,
@@ -32,7 +35,9 @@ Future<void> main() async {
         bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
       ),
     ),
-    routerConfig: router,
+    routerDelegate: router.routerDelegate,
+    routeInformationParser: router.routeInformationParser,
+    routeInformationProvider: router.routeInformationProvider,
     localizationsDelegates: AppLocalizations.localizationsDelegates,
     supportedLocales: AppLocalizations.supportedLocales,
   ));
