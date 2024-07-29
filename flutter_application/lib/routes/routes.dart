@@ -29,6 +29,11 @@ import 'package:flutter_application/pages/WebViewPage.dart';
 import 'package:flutter_application/pages/guess/GuessGamePage.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
+import 'package:path/path.dart';
+
+import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
+import '../pages/customPainter/MypainterPage.dart';
+import '../pages/lifeCycle/LifeCycleTestPage.dart';
 
 final GoRouter router = GoRouter(routes: <RouteBase>[
   GoRoute(
@@ -157,5 +162,20 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
                 title: 'WebViewPage',
               );
             }),
+        GoRoute(
+            path: 'Inheritedtestpage',
+            builder: (context, state) {
+              return const Inheritedtestpage();
+            }),
+        GoRoute(
+            path: 'MypainterPage',
+            builder: (context, state) {
+              return MypainterPage();
+            }),
+        GoRoute(
+            path: 'Lifecycletestpage',
+            builder: (context, state) {
+              return const Lifecycletestpage();
+            })
       ]),
 ]);
