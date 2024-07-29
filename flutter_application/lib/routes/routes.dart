@@ -29,7 +29,6 @@ import 'package:flutter_application/pages/WebViewPage.dart';
 import 'package:flutter_application/pages/guess/GuessGamePage.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
-import 'package:path/path.dart';
 
 final GoRouter router = GoRouter(routes: <RouteBase>[
   GoRoute(
@@ -154,9 +153,8 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             path: 'WebViewPage',
             builder: (context, state) {
               return WebViewPage(
-                url: 'https://www.baidu.com',
+                url: 'https://www.google.com',
                 title: 'WebViewPage',
-                key: const Key('WebViewPage'),
               );
             }),
       ]),
