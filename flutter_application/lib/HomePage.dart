@@ -117,6 +117,9 @@ class HomePage extends StatelessWidget {
               TextButton(
                   onPressed: () => {GoRouter.of(context).go('/GetXpage')},
                   child: const Text('GetXpage')),
+              TextButton(
+                  onPressed: () => {GoRouter.of(context).go('/WebViewPage')},
+                  child: const Text('WebViewPage')),
             ]),
           ),
         ),
