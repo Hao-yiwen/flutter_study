@@ -120,6 +120,20 @@ class HomePage extends StatelessWidget {
               TextButton(
                   onPressed: () => {GoRouter.of(context).go('/WebViewPage')},
                   child: const Text('WebViewPage')),
+              TextButton(
+                  onPressed: () =>
+                      {GoRouter.of(context).go('/Inheritedtestpage')},
+                  child: Text("Inheritedtestpage")),
+              TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).go('/MypainterPage');
+                  },
+                  child: Text("MypainterPage")),
+              TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).go('/Lifecycletestpage');
+                  },
+                  child: Text("Lifecycletestpage")),
             ]),
           ),
         ),
