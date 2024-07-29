@@ -4,6 +4,8 @@ import 'package:path/path.dart';
 import 'dart:async';
 
 class SqlitePage2 extends StatefulWidget {
+  const SqlitePage2({super.key});
+
   @override
   _SqlitePage2State createState() => _SqlitePage2State();
 }

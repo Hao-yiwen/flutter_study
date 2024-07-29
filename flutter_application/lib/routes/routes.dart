@@ -25,6 +25,7 @@ import 'package:flutter_application/pages/SqlitePage2.dart';
 import 'package:flutter_application/pages/TabBarPage.dart';
 import 'package:flutter_application/pages/ThemePage.dart';
 import 'package:flutter_application/pages/TimerTestPage.dart';
+import 'package:flutter_application/pages/WebViewPage.dart';
 import 'package:flutter_application/pages/guess/GuessGamePage.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
@@ -148,6 +149,15 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
           builder: (context, state) {
             return const GetXpage();
           },
-        )
+        ),
+        GoRoute(
+            path: 'WebViewPage',
+            builder: (context, state) {
+              return WebViewPage(
+                url: 'https://www.baidu.com',
+                title: 'WebViewPage',
+                key: const Key('WebViewPage'),
+              );
+            }),
       ]),
 ]);
