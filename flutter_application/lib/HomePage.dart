@@ -134,6 +134,21 @@ class HomePage extends StatelessWidget {
                     GoRouter.of(context).go('/Lifecycletestpage');
                   },
                   child: Text("Lifecycletestpage")),
+              TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).go('/FadeAppTestPage');
+                  },
+                  child: Text("FadeAppTestPage")),
+              TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).go('/RedBoxPage');
+                  },
+                  child: Text("RedBoxPage")),
+              TextButton(
+                  onPressed: () {
+                    GoRouter.of(context).go('/RotatingBoxPage');
+                  },
+                  child: Text("RotatingBoxPage")),
             ]),
           ),
         ),
