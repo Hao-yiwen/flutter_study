@@ -35,6 +35,7 @@ import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
 import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/customPainter/MypainterPage.dart';
+import '../pages/http/IsolateTestPage.dart';
 import '../pages/lifeCycle/LifeCycleTestPage.dart';
 import '../pages/renderobjectwidget/RedBoxPage.dart';
 
@@ -180,14 +181,25 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             builder: (context, state) {
               return const Lifecycletestpage();
             }),
-        GoRoute(path: 'FadeAppTestPage', builder: (context, state){
-          return const FadeAppTestPage(title: 'FadeAppTestPage');
-        }),
-        GoRoute(path: 'RedBoxPage', builder: (context, state){
-          return const RedBoxPage();
-        }),
-        GoRoute(path: 'RotatingBoxPage', builder: (context,state){
-          return const RotatingBoxPage();
-        })
+        GoRoute(
+            path: 'FadeAppTestPage',
+            builder: (context, state) {
+              return const FadeAppTestPage(title: 'FadeAppTestPage');
+            }),
+        GoRoute(
+            path: 'RedBoxPage',
+            builder: (context, state) {
+              return const RedBoxPage();
+            }),
+        GoRoute(
+            path: 'RotatingBoxPage',
+            builder: (context, state) {
+              return const RotatingBoxPage();
+            }),
+        GoRoute(
+            path: 'IsolateTestPage',
+            builder: (context, state) {
+              return IsolateTestPage();
+            })
       ]),
 ]);
