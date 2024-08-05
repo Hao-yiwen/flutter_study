@@ -32,6 +32,7 @@ import 'package:flutter_application/HomePage.dart';
 import 'package:path/path.dart';
 
 import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
+import '../pages/SpacedItemsList.dart';
 import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/customPainter/MypainterPage.dart';
@@ -200,6 +201,9 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             path: 'IsolateTestPage',
             builder: (context, state) {
               return IsolateTestPage();
-            })
+            }),
+        GoRoute(path: 'SpacedItemsList', builder: (context, state) {
+          return const SpacedItemsList();
+        }),
       ]),
 ]);

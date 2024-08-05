@@ -153,6 +153,11 @@ class HomePage extends StatelessWidget {
                   GoRouter.of(context).go('/IsolateTestPage');
                 },
                 child: Text("IsolateTestPage")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/SpacedItemsList');
+                },
+                child: Text("SpacedItemsList")),
           ]),
         ),
       ),

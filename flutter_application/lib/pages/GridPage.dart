@@ -35,15 +35,15 @@ class _GridPageState extends State<GridPage> {
 
   // #docregion grid
   Widget _buildGrid() => GridView.extent(
-      maxCrossAxisExtent: 150,
+      maxCrossAxisExtent: 250,
       padding: const EdgeInsets.all(4),
       mainAxisSpacing: 4,
       crossAxisSpacing: 4,
-      children: _buildGridTileList(5));
+      children: _buildGridTileList(15));
 
   // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
   List<Container> _buildGridTileList(int count) => List.generate(
-      count, (i) => Container(child: Image.asset('assets/pic$i.png')));
+      count, (i) => Container(child: Image.asset('assets/pic1.png')));
 
   // #enddocregion grid
   Widget _buildList() {
