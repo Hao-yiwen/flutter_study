@@ -158,6 +158,21 @@ class HomePage extends StatelessWidget {
                   GoRouter.of(context).go('/SpacedItemsList');
                 },
                 child: Text("SpacedItemsList")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/SliverExample');
+                },
+                child: Text("SliverExample")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/Exampleparallax');
+                },
+                child: Text("Exampleparallax")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/Mediaquerypage');
+                },
+                child: Text("Mediaquerypage")),
           ]),
         ),
       ),
