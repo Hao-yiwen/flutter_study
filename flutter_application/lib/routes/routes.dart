@@ -32,12 +32,15 @@ import 'package:flutter_application/HomePage.dart';
 import 'package:path/path.dart';
 
 import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
+import '../pages/MediaQueryPage.dart';
+import '../pages/SliverExample.dart';
 import '../pages/SpacedItemsList.dart';
 import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/customPainter/MypainterPage.dart';
 import '../pages/http/IsolateTestPage.dart';
 import '../pages/lifeCycle/LifeCycleTestPage.dart';
+import '../pages/parallax/ExampleParallax.dart';
 import '../pages/renderobjectwidget/RedBoxPage.dart';
 
 final GoRouter router = GoRouter(routes: <RouteBase>[
@@ -204,6 +207,15 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             }),
         GoRoute(path: 'SpacedItemsList', builder: (context, state) {
           return const SpacedItemsList();
+        }),
+        GoRoute(path: 'SliverExample', builder: (context, state) {
+          return const SliverExample();
+        }),
+        GoRoute(path: 'Exampleparallax', builder: (context, state){
+          return const Exampleparallax();
+        }),
+        GoRoute(path: 'Mediaquerypage', builder: (context, state){
+          return const Mediaquerypage();
         }),
       ]),
 ]);
