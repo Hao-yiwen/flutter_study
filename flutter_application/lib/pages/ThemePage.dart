@@ -21,7 +21,7 @@ class ThemePage extends StatelessWidget {
         ),
       ),
       floatingActionButton: Theme(
-        data: Theme.of(context).copyWith(splashColor: Colors.yellow),
+        data: Theme.of(context).copyWith(splashColor: Colors.yellow,colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue, brightness: Brightness.dark)),
         child: FloatingActionButton(
           onPressed: () {},
           child: const Icon(Icons.add),

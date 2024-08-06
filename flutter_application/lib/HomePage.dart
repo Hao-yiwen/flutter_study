@@ -173,6 +173,11 @@ class HomePage extends StatelessWidget {
                   GoRouter.of(context).go('/Mediaquerypage');
                 },
                 child: Text("Mediaquerypage")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/Exampleshader');
+                },
+                child: Text("Exampleshader")),
           ]),
         ),
       ),

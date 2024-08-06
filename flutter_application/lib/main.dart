@@ -4,6 +4,7 @@ import 'package:flutter_application/routes/AuthBinding.dart';
 import 'package:flutter_application/routes/routes.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 late List<CameraDescription> cameras;
 
@@ -11,30 +12,36 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   cameras = await availableCameras();
   AuthBinding().dependencies();
+
+  var baseTheme = ThemeData(brightness: Brightness.light);
   runApp(GetMaterialApp.router(
     theme: ThemeData(
       // Define the default brightness and colors.
       // brightness: Brightness.dark,
       primaryColor: Colors.blue,
+      useMaterial3: true,
 
-      colorScheme: ColorScheme.fromSwatch(
-        primarySwatch: Colors.grey, // 使用预定义的 MaterialColor
-      ).copyWith(
-        primary: Colors.black, // 设置自定义的 primary 颜色
-        secondary: Colors.pink, // 设置自定义的 secondary 颜色
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: Colors.purple,
+        // ···
+        brightness: Brightness.dark,
       ),
 
       // Define the default font family.
-      fontFamily: 'Georgia',
+      fontFamily: 'Raleway',
 
       // Define the default `TextTheme`. Use this to specify the default
       // text styling for headlines, titles, bodies of text, and more.
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         displayLarge: TextStyle(fontSize: 72, fontWeight: FontWeight.bold),
-        titleLarge: TextStyle(fontSize: 36, fontStyle: FontStyle.italic),
-        bodyMedium: TextStyle(fontSize: 14, fontFamily: 'Hind'),
+        titleLarge: GoogleFonts.oswald(
+        fontSize: 30,
+        fontStyle: FontStyle.italic,
       ),
+      bodyMedium: GoogleFonts.merriweather(),
+      displaySmall: GoogleFonts.pacifico(),
     ),
+  ),
     routerDelegate: router.routerDelegate,
     routeInformationParser: router.routeInformationParser,
     routeInformationProvider: router.routeInformationProvider,
