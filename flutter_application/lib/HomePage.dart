@@ -188,6 +188,31 @@ class HomePage extends StatelessWidget {
                   GoRouter.of(context).go('/ExampleDragAndDrop');
                 },
                 child: Text("ExampleDragAndDrop")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/ExampleInkwell');
+                },
+                child: Text("ExampleInkwell")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/ExampleDismissable');
+                },
+                child: Text("ExampleDismissable")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/TextController');
+                },
+                child: Text("TextController")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/Focustextpage');
+                },
+                child: Text("Focustextpage")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/ValidTextfield');
+                },
+                child: Text("ValidTextfield")),
           ]),
         ),
       ),
