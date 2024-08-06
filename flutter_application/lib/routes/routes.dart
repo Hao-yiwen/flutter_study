@@ -34,11 +34,13 @@ import 'package:path/path.dart';
 import '../pages/ExampleShader.dart';
 import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
 import '../pages/MediaQueryPage.dart';
+import '../pages/MixState.dart';
 import '../pages/SliverExample.dart';
 import '../pages/SpacedItemsList.dart';
 import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/customPainter/MypainterPage.dart';
+import '../pages/drag/ExampleDragAndDrop.dart';
 import '../pages/http/IsolateTestPage.dart';
 import '../pages/lifeCycle/LifeCycleTestPage.dart';
 import '../pages/parallax/ExampleParallax.dart';
@@ -220,6 +222,12 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
         }),
         GoRoute(path: 'Exampleshader', builder: (context, state){
           return const Exampleshader();
+        }),
+        GoRoute(path: 'MixStateState', builder: (context, state){
+          return const MixState();
+        }),
+        GoRoute(path: 'ExampleDragAndDrop', builder: (context, state){
+          return const ExampleDragAndDrop();
         }),
       ]),
 ]);

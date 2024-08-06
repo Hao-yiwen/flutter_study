@@ -178,6 +178,16 @@ class HomePage extends StatelessWidget {
                   GoRouter.of(context).go('/Exampleshader');
                 },
                 child: Text("Exampleshader")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/MixStateState');
+                },
+                child: Text("MixStateState")),
+            TextButton(
+                onPressed: () {
+                  GoRouter.of(context).go('/ExampleDragAndDrop');
+                },
+                child: Text("ExampleDragAndDrop")),
           ]),
         ),
       ),
