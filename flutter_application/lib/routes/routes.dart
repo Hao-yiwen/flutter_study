@@ -31,6 +31,8 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
 import 'package:path/path.dart';
 
+import '../pages/ExampleDismissable.dart';
+import '../pages/ExampleInkWell.dart';
 import '../pages/ExampleShader.dart';
 import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
 import '../pages/MediaQueryPage.dart';
@@ -41,6 +43,9 @@ import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/customPainter/MypainterPage.dart';
 import '../pages/drag/ExampleDragAndDrop.dart';
+import '../pages/form/FocusTextPage.dart';
+import '../pages/form/TextController.dart';
+import '../pages/form/ValidTextField.dart';
 import '../pages/http/IsolateTestPage.dart';
 import '../pages/lifeCycle/LifeCycleTestPage.dart';
 import '../pages/parallax/ExampleParallax.dart';
@@ -228,6 +233,21 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
         }),
         GoRoute(path: 'ExampleDragAndDrop', builder: (context, state){
           return const ExampleDragAndDrop();
+        }),
+        GoRoute(path: 'ExampleInkwell', builder: (context, state){
+          return const ExampleInkwell();
+        }),
+        GoRoute(path: 'ExampleDismissable', builder: (context, state){
+          return const ExampleDismissable();
+        }),
+        GoRoute(path: 'TextController', builder: (context, state){
+          return const TextController();
+        }),
+        GoRoute(path: 'Focustextpage', builder: (context, state){
+          return const Focustextpage();
+        }),
+        GoRoute(path: 'ValidTextfield', builder: (context, state){
+          return const ValidTextfield();
         }),
       ]),
 ]);
