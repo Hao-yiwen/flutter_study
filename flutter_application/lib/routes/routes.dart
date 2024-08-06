@@ -31,6 +31,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
 import 'package:path/path.dart';
 
+import '../pages/ExampleShader.dart';
 import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
 import '../pages/MediaQueryPage.dart';
 import '../pages/SliverExample.dart';
@@ -216,6 +217,9 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
         }),
         GoRoute(path: 'Mediaquerypage', builder: (context, state){
           return const Mediaquerypage();
+        }),
+        GoRoute(path: 'Exampleshader', builder: (context, state){
+          return const Exampleshader();
         }),
       ]),
 ]);
