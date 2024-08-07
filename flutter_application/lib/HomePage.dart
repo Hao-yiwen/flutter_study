@@ -15,6 +15,9 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.only(bottom: 20),
           child: ListView(children: [
             TextButton(
+                onPressed: () => {GoRouter.of(context).go('/BaseHome')},
+                child: const Text('BaseHome')),
+            TextButton(
                 onPressed: () => {GoRouter.of(context).go('/sqliteDemo')},
                 child: const Text('Sqlite Demo')),
             TextButton(
