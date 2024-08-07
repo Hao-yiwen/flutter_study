@@ -26,6 +26,7 @@ import 'package:flutter_application/pages/TabBarPage.dart';
 import 'package:flutter_application/pages/ThemePage.dart';
 import 'package:flutter_application/pages/TimerTestPage.dart';
 import 'package:flutter_application/pages/WebViewPage.dart';
+import 'package:flutter_application/pages/base/model/PostData.dart';
 import 'package:flutter_application/pages/guess/GuessGamePage.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
@@ -42,6 +43,7 @@ import '../pages/SpacedItemsList.dart';
 import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/base/BaseHome.dart';
+import '../pages/base/GoRouterExtraData.dart';
 import '../pages/base/ImagePlaceholder.dart';
 import '../pages/base/SvgTransformPage.dart';
 import '../pages/base/VideoPlayerScreen.dart';
@@ -82,6 +84,15 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
                   path: 'SvgTransformPage',
                   builder: (context, state) {
                     return const SvgTransformPage();
+                  }),
+              GoRoute(
+                  path: 'GoRouterExtradata',
+                  builder: (context, state) {
+                    final data = state.extra as PostData;
+                    return GoRouterExtradata(
+                      title: data.title,
+                      url: data.url,
+                    );
                   }),
             ]),
         GoRoute(
