@@ -44,7 +44,12 @@ import '../pages/animated/AnimatedContainerPage.dart';
 import '../pages/animated/AnimatedHome.dart';
 import '../pages/animated/AnimatedOpacityPage.dart';
 import '../pages/animated/FadeAppTestPage.dart';
+import '../pages/animated/PhysicsCardDragDemo.dart';
 import '../pages/animated/RotatingBoxPage.dart';
+import '../pages/animated/hero/HeroFirstPage.dart';
+import '../pages/animated/hero/HeroTwoPage.dart';
+import '../pages/animated/router_transition/TransitionPage1.dart';
+import '../pages/animated/router_transition/TransitionPage2.dart';
 import '../pages/base/BaseHome.dart';
 import '../pages/base/GoRouterExtraData.dart';
 import '../pages/base/ImagePlaceholder.dart';
@@ -124,6 +129,55 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
                   builder: (context, state) {
                     return const AnimatedOpacityPage();
                   }),
+              GoRoute(
+                  path: 'AnimatedOpacityPage',
+                  builder: (context, state) {
+                    return const AnimatedOpacityPage();
+                  }),
+              GoRoute(
+                path: 'AnimatedOpacityPage',
+                builder: (context, state) {
+                  return const AnimatedOpacityPage();
+                },
+              ),
+              GoRoute(
+                  path: 'HeroFirstPage',
+                  builder: (context, state) => HeroFirstPage(),
+                  routes: [
+                    GoRoute(
+                      path: 'HeroTwoPage',
+                      builder: (context, state) => HeroTwoPage(),
+                    ),
+                  ]),
+              GoRoute(
+                  path: 'TransitionPage1',
+                  builder: (context, state) => TransitionPage1(),
+                  routes: [
+                    GoRoute(
+                        path: 'TransitionPage2',
+                        pageBuilder: (context, state) {
+                          return CustomTransitionPage(
+                              child: TransitionPage2(),
+                              transitionsBuilder: (context, animation,
+                                  secondaryAnimation, child) {
+                                const begin = Offset(0.0, 1.0);
+                                const end = Offset.zero;
+                                const curve = Curves.ease;
+
+                                var tween = Tween(begin: begin, end: end)
+                                    .chain(CurveTween(curve: curve));
+                                var offsetAnimation = animation.drive(tween);
+
+                                return SlideTransition(
+                                  position: offsetAnimation,
+                                  child: child,
+                                );
+                              });
+                        }),
+                  ]),
+              GoRoute(path: 'PhysicsCardDragDemo', builder: (context, state) {
+                return const PhysicsCardDragDemo();
+              }),
             ]),
         GoRoute(
           path: 'sqliteDemo',
