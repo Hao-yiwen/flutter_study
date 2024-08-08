@@ -40,6 +40,9 @@ import '../pages/MediaQueryPage.dart';
 import '../pages/MixState.dart';
 import '../pages/SliverExample.dart';
 import '../pages/SpacedItemsList.dart';
+import '../pages/animated/AnimatedContainerPage.dart';
+import '../pages/animated/AnimatedHome.dart';
+import '../pages/animated/AnimatedOpacityPage.dart';
 import '../pages/animated/FadeAppTestPage.dart';
 import '../pages/animated/RotatingBoxPage.dart';
 import '../pages/base/BaseHome.dart';
@@ -93,6 +96,33 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
                       title: data.title,
                       url: data.url,
                     );
+                  }),
+            ]),
+        GoRoute(
+            path: 'AnimatedHome',
+            builder: (context, state) {
+              return const AnimatedHome();
+            },
+            routes: [
+              GoRoute(
+                  path: 'RotatingBoxPage',
+                  builder: (context, state) {
+                    return const RotatingBoxPage();
+                  }),
+              GoRoute(
+                  path: 'FadeAppTestPage',
+                  builder: (context, state) {
+                    return const FadeAppTestPage(title: 'FadeAppTestPage');
+                  }),
+              GoRoute(
+                  path: 'AnimatedContainerPage',
+                  builder: (context, state) {
+                    return const AnimatedContainerPage();
+                  }),
+              GoRoute(
+                  path: 'AnimatedOpacityPage',
+                  builder: (context, state) {
+                    return const AnimatedOpacityPage();
                   }),
             ]),
         GoRoute(
@@ -231,19 +261,9 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
               return const Lifecycletestpage();
             }),
         GoRoute(
-            path: 'FadeAppTestPage',
-            builder: (context, state) {
-              return const FadeAppTestPage(title: 'FadeAppTestPage');
-            }),
-        GoRoute(
             path: 'RedBoxPage',
             builder: (context, state) {
               return const RedBoxPage();
-            }),
-        GoRoute(
-            path: 'RotatingBoxPage',
-            builder: (context, state) {
-              return const RotatingBoxPage();
             }),
         GoRoute(
             path: 'IsolateTestPage',

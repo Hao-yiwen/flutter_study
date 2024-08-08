@@ -18,6 +18,9 @@ class HomePage extends StatelessWidget {
                 onPressed: () => {GoRouter.of(context).go('/BaseHome')},
                 child: const Text('BaseHome')),
             TextButton(
+                onPressed: () => {GoRouter.of(context).go('/AnimatedHome')},
+                child: const Text('AnimatedHome')),
+            TextButton(
                 onPressed: () => {GoRouter.of(context).go('/sqliteDemo')},
                 child: const Text('Sqlite Demo')),
             TextButton(
@@ -138,19 +141,9 @@ class HomePage extends StatelessWidget {
                 child: Text("Lifecycletestpage")),
             TextButton(
                 onPressed: () {
-                  GoRouter.of(context).go('/FadeAppTestPage');
-                },
-                child: Text("FadeAppTestPage")),
-            TextButton(
-                onPressed: () {
                   GoRouter.of(context).go('/RedBoxPage');
                 },
                 child: Text("RedBoxPage")),
-            TextButton(
-                onPressed: () {
-                  GoRouter.of(context).go('/RotatingBoxPage');
-                },
-                child: Text("RotatingBoxPage")),
             TextButton(
                 onPressed: () {
                   GoRouter.of(context).go('/IsolateTestPage');
