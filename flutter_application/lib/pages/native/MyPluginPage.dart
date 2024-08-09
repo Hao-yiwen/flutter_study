@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/pages/MyPlugin.dart';
+import 'package:flutter_application/pages/native/MyPlugin.dart';
 
 class MyPluginPage extends StatefulWidget {
   const MyPluginPage({super.key});

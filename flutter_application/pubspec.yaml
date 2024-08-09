@@ -38,7 +38,7 @@ dependencies:
   google_sign_in: ^6.1.5
   shared_preferences: ^2.2.2
   google_fonts: 6.2.1
-  http: ^1.1.0
+  http: ^1.2.2
   camera: ^0.10.5+5
   flutter_localizations:
     sdk: flutter
@@ -55,6 +55,8 @@ dependencies:
   transparent_image: ^2.0.1
   video_player: ^2.9.1
   vector_graphics: ^1.1.11+1
+  web_socket_channel: ^3.0.1
+  json_annotation: ^4.9.0
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +69,8 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   vector_graphics_compiler: ^1.1.11+1
+  build_runner: ^2.4.11
+  json_serializable: ^6.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

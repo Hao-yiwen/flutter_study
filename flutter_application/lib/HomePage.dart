@@ -16,16 +16,19 @@ class HomePage extends StatelessWidget {
           child: ListView(children: [
             TextButton(
                 onPressed: () => {GoRouter.of(context).go('/BaseHome')},
-                child: const Text('BaseHome')),
+                child: const Text('基础示例')),
             TextButton(
                 onPressed: () => {GoRouter.of(context).go('/AnimatedHome')},
-                child: const Text('AnimatedHome')),
+                child: const Text('动画示例')),
             TextButton(
                 onPressed: () => {GoRouter.of(context).go('/login')},
-                child: const Text('shopper')),
+                child: const Text('provider示例')),
+            TextButton(
+                onPressed: () => {GoRouter.of(context).go('/http')},
+                child: const Text('http示例')),
             TextButton(
                 onPressed: () => {GoRouter.of(context).go('/sqliteDemo')},
-                child: const Text('Sqlite Demo')),
+                child: const Text('存储示例')),
             TextButton(
               child: const Text('TimerTestPage'),
               onPressed: () => {
@@ -63,10 +66,7 @@ class HomePage extends StatelessWidget {
               child: const Text('GesturePage'),
               onPressed: () => {GoRouter.of(context).go('/GesturePage')},
             ),
-            TextButton(
-              child: const Text('HttpPage'),
-              onPressed: () => {GoRouter.of(context).go('/HttpPage')},
-            ),
+
             TextButton(
                 onPressed: () => {GoRouter.of(context).go('/FormPage')},
                 child: const Text('FormPage')),
@@ -147,11 +147,6 @@ class HomePage extends StatelessWidget {
                   GoRouter.of(context).go('/RedBoxPage');
                 },
                 child: Text("RedBoxPage")),
-            TextButton(
-                onPressed: () {
-                  GoRouter.of(context).go('/IsolateTestPage');
-                },
-                child: Text("IsolateTestPage")),
             TextButton(
                 onPressed: () {
                   GoRouter.of(context).go('/SpacedItemsList');
