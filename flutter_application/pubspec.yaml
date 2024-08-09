@@ -102,7 +102,11 @@ flutter:
     - family: Ali
       fonts:
         - asset: fonts/AlimamaDaoLiTi.ttf
-        
+    - family: Corben
+      fonts:
+        - asset: fonts/Corben-Bold.ttf
+          weight: 700
+
   generate: true # Add this line.
 
   # To add assets to your application, add an assets section, like this:

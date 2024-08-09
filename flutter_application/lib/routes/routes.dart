@@ -28,6 +28,9 @@ import 'package:flutter_application/pages/TimerTestPage.dart';
 import 'package:flutter_application/pages/WebViewPage.dart';
 import 'package:flutter_application/pages/base/model/PostData.dart';
 import 'package:flutter_application/pages/guess/GuessGamePage.dart';
+import 'package:flutter_application/pages/shopper/cart.dart';
+import 'package:flutter_application/pages/shopper/catalog.dart';
+import 'package:flutter_application/pages/shopper/login.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_application/HomePage.dart';
 import 'package:path/path.dart';
@@ -175,9 +178,27 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
                               });
                         }),
                   ]),
-              GoRoute(path: 'PhysicsCardDragDemo', builder: (context, state) {
-                return const PhysicsCardDragDemo();
-              }),
+              GoRoute(
+                  path: 'PhysicsCardDragDemo',
+                  builder: (context, state) {
+                    return const PhysicsCardDragDemo();
+                  }),
+            ]),
+        GoRoute(
+            path: 'login',
+            builder: (context, state) {
+              return MyLogin();
+            }),
+        GoRoute(
+            path: 'catalog',
+            builder: (context, state) {
+              return MyCatalog();
+            },
+            routes: [
+              GoRoute(
+                path: 'cart',
+                builder: (context, state) => MyCart(),
+              ),
             ]),
         GoRoute(
           path: 'sqliteDemo',
