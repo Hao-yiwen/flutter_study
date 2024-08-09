@@ -21,6 +21,9 @@ class HomePage extends StatelessWidget {
                 onPressed: () => {GoRouter.of(context).go('/AnimatedHome')},
                 child: const Text('AnimatedHome')),
             TextButton(
+                onPressed: () => {GoRouter.of(context).go('/login')},
+                child: const Text('shopper')),
+            TextButton(
                 onPressed: () => {GoRouter.of(context).go('/sqliteDemo')},
                 child: const Text('Sqlite Demo')),
             TextButton(
