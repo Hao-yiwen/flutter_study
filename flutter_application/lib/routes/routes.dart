@@ -8,20 +8,21 @@ import 'package:flutter_application/pages/FormPage.dart';
 import 'package:flutter_application/pages/GesturePage.dart';
 import 'package:flutter_application/pages/Get/GetXPage.dart';
 import 'package:flutter_application/pages/GridPage.dart';
-import 'package:flutter_application/pages/HttpPage.dart';
+import 'package:flutter_application/pages/http/HttpHome.dart';
+import 'package:flutter_application/pages/http/HttpPage.dart';
 import 'package:flutter_application/pages/IconPage.dart';
 import 'package:flutter_application/pages/LayoutPage.dart';
 import 'package:flutter_application/pages/LifecyclePage.dart';
 import 'package:flutter_application/pages/LocalizationPage.dart';
 import 'package:flutter_application/pages/LottiePage.dart';
-import 'package:flutter_application/pages/MyPluginPage.dart';
+import 'package:flutter_application/pages/native/MyPluginPage.dart';
 import 'package:flutter_application/pages/NavigationPage.dart';
 import 'package:flutter_application/pages/PlatformPage.dart';
 import 'package:flutter_application/pages/RandomWords.dart';
 import 'package:flutter_application/pages/SharedPreferencesPage.dart';
 import 'package:flutter_application/pages/ShoppingList.dart';
-import 'package:flutter_application/pages/SqlitePage.dart';
-import 'package:flutter_application/pages/SqlitePage2.dart';
+import 'package:flutter_application/pages/sqlite/SqlitePage.dart';
+import 'package:flutter_application/pages/sqlite/SqlitePage2.dart';
 import 'package:flutter_application/pages/TabBarPage.dart';
 import 'package:flutter_application/pages/ThemePage.dart';
 import 'package:flutter_application/pages/TimerTestPage.dart';
@@ -39,7 +40,7 @@ import '../pages/ExampleDismissable.dart';
 import '../pages/ExampleInkWell.dart';
 import '../pages/ExampleShader.dart';
 import '../pages/InHeritedWidgetPage/InheritedTestPage.dart';
-import '../pages/MediaQueryPage.dart';
+import '../pages/base/MediaQueryPage.dart';
 import '../pages/MixState.dart';
 import '../pages/SliverExample.dart';
 import '../pages/SpacedItemsList.dart';
@@ -63,7 +64,10 @@ import '../pages/drag/ExampleDragAndDrop.dart';
 import '../pages/form/FocusTextPage.dart';
 import '../pages/form/TextController.dart';
 import '../pages/form/ValidTextField.dart';
+import '../pages/http/HttpAlbumPage.dart';
 import '../pages/http/IsolateTestPage.dart';
+import '../pages/http/JsonSerialTestPage.dart';
+import '../pages/http/WebsocketTestPage.dart';
 import '../pages/lifeCycle/LifeCycleTestPage.dart';
 import '../pages/parallax/ExampleParallax.dart';
 import '../pages/renderobjectwidget/RedBoxPage.dart';
@@ -190,6 +194,36 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
               return MyLogin();
             }),
         GoRoute(
+            path: 'http',
+            builder: (context, state) {
+              return HttpHome();
+            },
+            routes: [
+              GoRoute(
+                  path: 'HttpAlbumPage',
+                  builder: (context, state) {
+                    return const HttpAlbumPage();
+                  }),
+              GoRoute(
+                  path: 'HttpPage',
+                  builder: (context, state) => const HttpPage()),
+              GoRoute(
+                  path: 'IsolateTestPage',
+                  builder: (context, state) {
+                    return IsolateTestPage();
+                  }),
+              GoRoute(
+                  path: 'WebSocketTestPage',
+                  builder: (context, state) {
+                    return WebSocketTestPage();
+                  }),
+              GoRoute(
+                  path: 'JsonSerialTestPage',
+                  builder: (context, state) {
+                    return JsonSerialTestPage();
+                  }),
+            ]),
+        GoRoute(
             path: 'catalog',
             builder: (context, state) {
               return MyCatalog();
@@ -231,8 +265,6 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
         GoRoute(
             path: 'GesturePage',
             builder: (context, state) => const GesturePage()),
-        GoRoute(
-            path: 'HttpPage', builder: (context, state) => const HttpPage()),
         GoRoute(
             path: 'FormPage', builder: (context, state) => const FormPage()),
         GoRoute(
@@ -339,11 +371,6 @@ final GoRouter router = GoRouter(routes: <RouteBase>[
             path: 'RedBoxPage',
             builder: (context, state) {
               return const RedBoxPage();
-            }),
-        GoRoute(
-            path: 'IsolateTestPage',
-            builder: (context, state) {
-              return IsolateTestPage();
             }),
         GoRoute(
             path: 'SpacedItemsList',
